@@ -1,38 +1,89 @@
-# Chatbot-no-Telegram-de-voto-para-Presidente-em-Python
-Chatbot no Telegram de voto para Presidente em Python
+# 🗳️ Electronic Voting Bot (Telegram)
 
-*Primeiro necessario criar um bot no BotFather @BotFather
-*Segundo necessario adicionar o token do bot no codigo
+<div align="center">
 
-#Feitos os passa a passos anteriores agora vamos configurar a eleição:
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python&logoColor=white)
+![Telegram](https://img.shields.io/badge/Telegram-Bot-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)
+![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
-Primeiramente, no bot criado, clique em "Iniciar" ou digite "/start". Em seguida, digite "/inserir_presidente" e insira a senha: 1234. Após a autenticação, você poderá escolher o nome do presidente.
-![addpresidente](https://github.com/user-attachments/assets/9d8402e9-6da0-4206-bca3-c3d493d5ecb4)
+<h3>
+  <a href="README.md">🇧🇷 Leia em Português</a>
+</h3>
 
-Para visualizar a lista completa de presidentes cadastrados, digite /lista_presidentes."
-![lista](https://github.com/user-attachments/assets/01b8e4be-4b7a-443a-8698-11935cfb365c)
+</div>
 
-Para excluir um presidente, digite /deletar_presidente seguido da senha de confirmação (1234) e do nome exato do presidente que deseja remover. Atenção: Essa ação é irreversível.
-![deletarpresidente](https://github.com/user-attachments/assets/a24e09c0-7056-4581-9b5a-382ac6f8e155)
+---
 
-/encerrar  (senha:1234)
-Encerra as eleicoes e ao usuario inciar /start o bot aparece ver os resultados onde ao clicar nele aparece os resultados das eleicoes
-![encerrar](https://github.com/user-attachments/assets/5dfcd868-1b4b-4dca-9a43-76fd33887612)
-![ver resultados](https://github.com/user-attachments/assets/02b240e0-b045-4c07-86e6-76b55787f6b0)
-![ver resultados2](https://github.com/user-attachments/assets/46e08e72-299c-484a-b482-3a6c91c51530)
+## 🇺🇸 About
+A Telegram bot that simulates an **Electronic Voting Machine**. It allows remote voting via the Telegram API, candidate management, and real-time vote counting.
 
-Reabrir eleições digitar /reabrir  (senha:1234)
+### ✨ Key Features
+* **Secure Admin Panel:** Protected by password to manage the election.
+* **Voter Validation:** Uses CPF (ID) validation to ensure unique votes per person.
+* **Election States:** Ability to Open, Close, and Reopen elections.
+* **Real-time Reports:** Instant vote counting and results visualization.
 
-![reabrir](https://github.com/user-attachments/assets/b923c036-737c-4991-b659-d2c75b67ea9c)
+---
 
-/zerar_banco (esse comando zera o banco de dados)
+## 🚀 Setup & Installation
 
-# Tela Usuasrio:
+1.  **Create the Bot:** Talk to [@BotFather](https://telegram.me/BotFather) on Telegram to create a new bot and get your **Token**.
+2.  **Configure:** Add your token to the `token` variable in the code.
+3.  **Install Dependencies:**
+    ```bash
+    pip install -r requirements.txt
+    ```
+4.  **Run:**
+    ```bash
+    python main.py
+    ```
 
-Votando e necessario clicar em /start, vai pedir o nome e o cpf e ao digitar ambos vai aparecer os candidatos para ele votar(So aceita votar uma vez por cpf)
-![votacao](https://github.com/user-attachments/assets/94069a55-e56f-425a-abf0-db0545315c83)
-Para escolher so clicar no candidato e clicar em confirmar:
-![escolha candidato](https://github.com/user-attachments/assets/29c784c9-3415-492a-92f5-ae388610c707)
-Caso a eleição tenha sido encerrada vai aparecer Ver resultados ao usuario clicar em Inicar ou /Start
-![ver resultados](https://github.com/user-attachments/assets/02b240e0-b045-4c07-86e6-76b55787f6b0)
+---
 
+## 🛠️ Admin Commands
+> **Default Password:** `1234`
+
+| Command | Description |
+| :--- | :--- |
+| `/inserir_presidente` | Adds a new candidate to the election. |
+| `/lista_presidentes` | Lists all registered candidates. |
+| `/deletar_presidente` | Removes a candidate (Irreversible). |
+| `/encerrar` | Closes the election and publishes results. |
+| `/reabrir` | Reopens the election for more votes. |
+| `/zerar_banco` | **Hard Reset:** Wipes the entire database. |
+
+### 📸 Admin Screenshots
+<details>
+<summary>Click to view Admin Interface</summary>
+
+**Add Candidate & List:**
+<img src="https://github.com/user-attachments/assets/9d8402e9-6da0-4206-bca3-c3d493d5ecb4" width="45%">
+<img src="https://github.com/user-attachments/assets/01b8e4be-4b7a-443a-8698-11935cfb365c" width="45%">
+
+**Delete & Reopen:**
+<img src="https://github.com/user-attachments/assets/a24e09c0-7056-4581-9b5a-382ac6f8e155" width="45%">
+<img src="https://github.com/user-attachments/assets/b923c036-737c-4991-b659-d2c75b67ea9c" width="45%">
+
+</details>
+
+---
+
+## 👤 User (Voter) Flow
+1.  User starts with `/start`.
+2.  Bot asks for **Name** and **CPF**.
+3.  Bot checks if the user has already voted.
+4.  User selects a candidate and confirms.
+
+### 📸 Voter Screenshots
+<details>
+<summary>Click to view Voter Interface & Results</summary>
+
+**Voting Process:**
+<img src="https://github.com/user-attachments/assets/94069a55-e56f-425a-abf0-db0545315c83" width="45%">
+<img src="https://github.com/user-attachments/assets/29c784c9-3415-492a-92f5-ae388610c707" width="45%">
+
+**Election Results (After Closing):**
+<img src="https://github.com/user-attachments/assets/5dfcd868-1b4b-4dca-9a43-76fd33887612" width="45%">
+<img src="https://github.com/user-attachments/assets/46e08e72-299c-484a-b482-3a6c91c51530" width="45%">
+
+</details>
