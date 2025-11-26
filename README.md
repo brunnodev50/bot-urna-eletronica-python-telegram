@@ -7,7 +7,7 @@
 ![SQLite](https://img.shields.io/badge/Database-SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
 
 <h3>
-  <a href="README.md">🇺🇸 Read in English</a>
+  <a href="README.en-us.md">🇺🇸 Read in English</a>
 </h3>
 
 </div>
